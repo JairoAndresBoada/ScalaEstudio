@@ -1,0 +1,25 @@
+@(titulo : String, lista: Map[String,Int])
+
+<html>
+    <head>
+        <title>Lenguajes</title>
+    </head>
+    <body>
+        <h1>@titulo</h1>
+        <div>
+            <table border="1">
+                <thead>
+                    <td>Nombre</td><td>Años de Uso</td>
+                </thead>
+                <tbody>
+                @for((a, b) <- lista){
+                    <tr>
+                        <td>@a</td>
+                        <td>@b</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

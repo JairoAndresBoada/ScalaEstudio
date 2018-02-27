@@ -1,0 +1,42 @@
+@import scala.collection.mutable
+@(Titulo: String, ListaCarros : mutable.Map[Int,mutable.Map[Int,String]])
+<html>
+    <head>
+        <title>
+        @Titulo
+        </title>
+    </head>
+    <body>
+        <header>
+            <h1>@Titulo</h1>
+        </header>
+        <section>
+            <table border="1" style="border-radius: 20%">
+                <thead>
+                    <td>Tipo Vehiculo</td>
+                    <td>Hora Ingreso</td>
+                    <td>Hora Salida</td>
+                    <td>Cilindraje</td>
+                    <td>Valor a Pagar</td>
+                </thead>
+                <tbody>
+                @for(index <- ListaCarros) {
+                    <tr>
+
+                        <td>@index._2.apply(1)</td>
+                        <td>@index._2.apply(2)</td>
+                        <td>@index._2.apply(3)</td>
+                        <td>@index._2.apply(4)</td>
+                        <td>@index._2.apply(5)</td>
+
+                    </tr>
+                }
+                </tbody>
+            </table>
+
+        </section>
+        <footer>
+
+        </footer>
+    </body>
+</html>
